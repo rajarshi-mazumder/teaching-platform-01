@@ -1,0 +1,32 @@
+.learning-path {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 8px 0;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .learning-path:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  .learning-path-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #333;
+  }
+  
+  .learning-path-description {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+  }
+  .learning-paths-list{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 1em;
+  }
