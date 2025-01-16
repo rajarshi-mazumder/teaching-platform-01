@@ -1,0 +1,17 @@
+[
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "john@example.com",
+      "enrolledCourses": [1, 2],
+      "progress": { "1": 50, "2": 25 }
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "email": "jane@example.com",
+      "enrolledCourses": [2],
+      "progress": { "2": 100 }
+    }
+  ]
+  

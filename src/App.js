@@ -9,11 +9,13 @@ import {
 } from "react-router-dom";
 import HomeLayout from "./layouts/HomeLayout";
 import CoursesPage from "./pages/Courses";
+import CourseDetails from "./pages/CourseDetails";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<HomeLayout />}>
       <Route index={true} element={<CoursesPage />} />
+      <Route path="/courses/:courseId" element={<CourseDetails />} />
     </Route>
   )
 );

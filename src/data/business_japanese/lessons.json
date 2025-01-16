@@ -1,0 +1,26 @@
+{"lessons":[
+    {
+        "id": 301,
+        "title": "Business Japanese Etiquette",
+        "courseId": 4,
+        "videoUrl": "https://cdn.example.com/videos/business_etiquette.mp4",
+        "textDescription": "Understand the etiquette required in business interactions in Japan.",
+        "duration": 50
+      },
+      {
+        "id": 302,
+        "title": "Formal Introductions in Business Settings",
+        "courseId": 4,
+        "videoUrl": null,
+        "textDescription": "Learn how to properly introduce yourself in a business context.",
+        "duration": 40
+      },
+      {
+        "id": 303,
+        "title": "Japanese Business Writing",
+        "courseId": 4,
+        "videoUrl": "https://cdn.example.com/videos/business_writing.mp4",
+        "textDescription": "Learn the basics of writing formal business emails and documents in Japanese.",
+        "duration": 60
+      }
+]}

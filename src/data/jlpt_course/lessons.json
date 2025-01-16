@@ -1,0 +1,27 @@
+{"lessons":[
+    {
+      "id": 101,
+      "title": "Introduction to JLPT N5",
+      "courseId": 1,
+      "videoUrl": "https://cdn.example.com/videos/intro.mp4",
+      "textDescription": "An overview of the JLPT N5 exam structure and tips.",
+      "duration": 30
+    },
+    {
+      "id": 102,
+      "title": "Basic Japanese Grammar",
+      "courseId": 1,
+      "videoUrl": null,
+      "textDescription": "Learn essential grammar rules for JLPT N5.",
+      "duration": 90
+    },
+    {
+      "id": 103,
+      "title": "Business Meeting Etiquette",
+      "courseId": 2,
+      "videoUrl": "https://cdn.example.com/videos/etiquette.mp4",
+      "textDescription": "Learn the do's and don'ts of Japanese business meetings.",
+      "duration": 60
+    }
+  ]}
+  

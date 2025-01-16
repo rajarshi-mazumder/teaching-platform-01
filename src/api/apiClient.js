@@ -1,9 +1,10 @@
 import axios from "axios";
 
-const apiClient = axios.create({
-  baseURL: "http://localhost:3001",
-  headers: {
-    "Content-Type": "applicaiton/json",
-  },
-});
+const apiClient = ({ port }) =>
+  axios.create({
+    baseURL: `http://localhost:${port}`,
+    headers: {
+      "Content-Type": "applicaiton/json",
+    },
+  });
 export default apiClient;

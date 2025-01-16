@@ -1,0 +1,28 @@
+{
+    "lessons":[
+        {
+            "id": 201,
+            "title": "Introduction to Casual Japanese",
+            "courseId": 3,
+            "videoUrl": "https://cdn.example.com/videos/casual_intro.mp4",
+            "textDescription": "Learn the basics of casual Japanese for everyday conversations.",
+            "duration": 45
+          },
+          {
+            "id": 202,
+            "title": "Essential Phrases for Travel",
+            "courseId": 3,
+            "videoUrl": null,
+            "textDescription": "Master the essential phrases you need when traveling in Japan.",
+            "duration": 30
+          },
+          {
+            "id": 203,
+            "title": "Ordering Food in Japanese",
+            "courseId": 3,
+            "videoUrl": "https://cdn.example.com/videos/food_ordering.mp4",
+            "textDescription": "Learn how to order food in a Japanese restaurant.",
+            "duration": 35
+          }
+    ]
+}
