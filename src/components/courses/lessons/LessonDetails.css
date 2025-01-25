@@ -1,0 +1,67 @@
+.lesson-details {
+    max-width: 800px;
+    margin: 20px auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+  
+  .video-container {
+    background-color: #000;
+  }
+  
+  .no-video {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    color: white;
+    background-color: #333;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .tabs {
+    display: flex;
+    justify-content: space-around;
+    background-color: #f4f4f4;
+    padding: 10px 0;
+    border-top: 1px solid #ddd;
+  }
+  
+  .tabs button {
+    background: none;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #333;
+  }
+  
+  .tabs button:hover {
+    color: #007bff;
+  }
+  
+  .tabs .active {
+    border-bottom: 3px solid #007bff;
+    font-weight: bold;
+  }
+  
+  .tab-content {
+    padding: 20px;
+  }
+  
+  .summary, .quiz, .flashcards {
+    font-size: 1rem;
+    color: #444;
+  }
+  
+  .quiz, .flashcards {
+    text-align: center;
+    font-style: italic;
+    color: #666;
+  }
+  

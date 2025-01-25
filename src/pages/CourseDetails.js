@@ -1,47 +1,34 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import useCourseDetails from "../hooks/useCourseDetails";
 import useLearningPaths from "../hooks/uselearningPaths";
 import axios from "axios";
-import {
-  List,
-  ListItem,
-  ListItemText,
-  Divider,
-  ListItemIcon,
-} from "@mui/material";
-import VideoLibraryIcon from "@mui/icons-material/VideoLibrary";
+import LessonListItem from "../components/courses/lessons/LessonListItem";
+import LessonDetails from "../components/courses/lessons/LessonDetails";
 
 const CourseDetails = () => {
   const { courseId } = useParams();
   const { courseDetails, setCourseDetails } = useCourseDetails({
     id: courseId,
   });
+
+  const [lessonInProgress, setLessonInProgress] = useState(null);
+  const handleLessonClick = (lesson) => {
+    setLessonInProgress(lesson);
+  };
   console.log(courseDetails);
   return (
     <div>
       {courseDetails && courseDetails.length > 0 ? (
         courseDetails.map((lesson) => (
           <div key={lesson.id}>
-            <ListItem button>
-              <ListItemIcon>
-                <VideoLibraryIcon />
-              </ListItemIcon>
-              <ListItemText
-                primary={lesson.title}
-                secondary={
-                  lesson.textDescription
-                    ? lesson.textDescription
-                    : "No description available."
-                }
-              />
-            </ListItem>
-            <Divider />
+            <LessonListItem lesson={lesson} onLessonClick={handleLessonClick} />
           </div>
         ))
       ) : (
         <p>No lessons available.</p>
       )}
+      {lessonInProgress && <LessonDetails lesson={lessonInProgress} />}
     </div>
   );
 };
