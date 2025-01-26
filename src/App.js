@@ -9,13 +9,13 @@ import {
 } from "react-router-dom";
 import HomeLayout from "./layouts/HomeLayout";
 import CoursesPage from "./pages/Courses";
-import CourseDetails from "./pages/CourseDetails";
+import CourseDetailsPage from "./pages/CourseDetailsPage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<HomeLayout />}>
       <Route index={true} element={<CoursesPage />} />
-      <Route path="/courses/:courseId" element={<CourseDetails />} />
+      <Route path="/courses/:courseId" element={<CourseDetailsPage />} />
     </Route>
   )
 );

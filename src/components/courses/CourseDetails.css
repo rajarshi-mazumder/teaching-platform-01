@@ -1,0 +1,11 @@
+.course-details {
+    display: flex;
+}
+
+.lessons-list-container{
+    width: 30%;
+}
+
+.lesson-details-container{
+    width: 70%;
+}
