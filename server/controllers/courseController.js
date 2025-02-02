@@ -21,7 +21,7 @@ const getCoursesByLearningPath = async (req, res) => {
     );
     res.json(result.rows);
   } catch (error) {
-    req
+    res
       .status(500)
       .json({ error: "Could not find courses  iwth learning path id" });
   }

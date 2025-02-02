@@ -1,6 +1,6 @@
 const pool = require("../config/db");
 
-const getAllLearningPaths = async (requestAnimationFrame, res) => {
+const getAllLearningPaths = async (req, res) => {
   try {
     const result = await pool.query("SELECT * FROM learning_paths");
     res.json(result.rows);

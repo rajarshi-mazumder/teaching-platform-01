@@ -5,6 +5,7 @@ require("dotenv");
 
 const learningPathsRoutes = require("./routes/learningPathRoutes");
 const courseRoutes = require("./routes/courseRoutes");
+const lessonsRoutes = require("./routes/lessonRoutes");
 
 const app = express();
 
@@ -15,6 +16,7 @@ app.use(express.json());
 
 app.use("/api/learning-paths", learningPathsRoutes);
 app.use("/api/courses", courseRoutes);
+app.use("/api/courses/:courseId/lessons", lessonsRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
