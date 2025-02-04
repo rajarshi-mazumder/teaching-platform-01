@@ -1,0 +1,37 @@
+{
+    "courses": [
+      { "id": 101, "title": "JLPT N5 Kanji Basics", "description": "Learn the basic kanji needed for JLPT N5.", "learningPathId": 1 },
+      { "id": 102, "title": "JLPT N5 Grammar Mastery", "description": "Master essential grammar rules for JLPT N5.", "learningPathId": 1 },
+      { "id": 103, "title": "JLPT N5 Vocabulary Builder", "description": "Expand your vocabulary for JLPT N5.", "learningPathId": 1 },
+      { "id": 104, "title": "JLPT N4 Kanji & Reading", "description": "Learn and practice kanji for JLPT N4.", "learningPathId": 1 },
+      { "id": 105, "title": "JLPT N4 Listening & Comprehension", "description": "Sharpen your listening skills for the JLPT N4.", "learningPathId": 1 },
+      { "id": 106, "title": "JLPT N3 Advanced Grammar", "description": "Understand complex grammar structures for JLPT N3.", "learningPathId": 1 },
+      { "id": 107, "title": "JLPT N3 Reading Practice", "description": "Improve reading speed and comprehension for N3.", "learningPathId": 1 },
+      { "id": 108, "title": "JLPT N2 Kanji & Vocabulary", "description": "Deep dive into advanced kanji and vocabulary.", "learningPathId": 1 },
+      { "id": 109, "title": "JLPT N1 Mock Test Strategies", "description": "Ace the JLPT N1 with proven strategies.", "learningPathId": 1 },
+      { "id": 110, "title": "JLPT N1 Advanced Reading", "description": "Train for long and difficult JLPT N1 reading passages.", "learningPathId": 1 },
+  
+      { "id": 111, "title": "Basic Japanese Conversations", "description": "Learn simple daily conversations.", "learningPathId": 2 },
+      { "id": 112, "title": "Japanese Slang & Expressions", "description": "Sound more natural using casual Japanese.", "learningPathId": 2 },
+      { "id": 113, "title": "Talking About Hobbies", "description": "Learn how to discuss hobbies and interests.", "learningPathId": 2 },
+      { "id": 114, "title": "Ordering Food Like a Local", "description": "Master restaurant conversations in Japanese.", "learningPathId": 2 },
+      { "id": 115, "title": "Casual Japanese for Shopping", "description": "Communicate with shopkeepers and cashiers.", "learningPathId": 2 },
+      { "id": 116, "title": "Japanese for Social Media", "description": "Understand common online phrases and slang.", "learningPathId": 2 },
+      { "id": 117, "title": "Making Friends in Japanese", "description": "Learn how to start and maintain conversations.", "learningPathId": 2 },
+      { "id": 118, "title": "Talking About Weather", "description": "Discussing the weather in casual Japanese.", "learningPathId": 2 },
+      { "id": 119, "title": "Casual Phone Conversations", "description": "Learn how to make phone calls in Japanese.", "learningPathId": 2 },
+      { "id": 120, "title": "Japanese for Dating", "description": "Useful phrases for dating and relationships.", "learningPathId": 2 },
+  
+      { "id": 121, "title": "Keigo (Honorific Language) Basics", "description": "Learn the foundation of formal business speech.", "learningPathId": 3 },
+      { "id": 122, "title": "Business Emails & Writing", "description": "Write professional emails in Japanese.", "learningPathId": 3 },
+      { "id": 123, "title": "Japanese Resume Writing", "description": "Create a Japanese-style CV and job application.", "learningPathId": 3 },
+      { "id": 124, "title": "Business Meeting Etiquette", "description": "Understand manners for Japanese business meetings.", "learningPathId": 3 },
+      { "id": 125, "title": "Formal Phone Conversations", "description": "How to handle business calls politely.", "learningPathId": 3 },
+      { "id": 126, "title": "Networking in Japan", "description": "How to introduce yourself in business settings.", "learningPathId": 3 },
+      { "id": 127, "title": "Japanese for Negotiations", "description": "Learn key phrases for business deals.", "learningPathId": 3 },
+      { "id": 128, "title": "Handling Customer Complaints", "description": "Respond professionally to customer issues.", "learningPathId": 3 },
+      { "id": 129, "title": "Corporate Culture in Japan", "description": "Understand how Japanese companies operate.", "learningPathId": 3 },
+      { "id": 130, "title": "Advanced Keigo Mastery", "description": "Deep dive into keigo for professional fluency.", "learningPathId": 3 }
+    ]
+  }
+  

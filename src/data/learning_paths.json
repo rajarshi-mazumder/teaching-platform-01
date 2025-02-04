@@ -1,38 +1,44 @@
-{"paths":[
+{
+  "paths": [
     {
       "id": 1,
       "title": "JLPT Preparation",
       "description": "Master kanji, grammar, and vocabulary to ace the JLPT exams, from N5 to N1.",
       "image": "/images/jlpt.jpg",
-      "pathLink": "/learning-paths/jlpt"
+      "pathLink": "/learning-paths/jlpt",
+      "courseIds": [101, 102, 103, 104, 105, 106, 107, 108, 109, 110]
     },
     {
       "id": 2,
       "title": "Casual Japanese",
       "description": "Learn conversational Japanese for everyday interactions and travel.",
       "image": "/images/casual.jpg",
-      "pathLink": "/learning-paths/casual"
+      "pathLink": "/learning-paths/casual",
+      "courseIds": [111, 112, 113, 114, 115, 116, 117, 118, 119, 120]
     },
     {
       "id": 3,
       "title": "Business Japanese",
       "description": "Develop skills in formal Japanese for professional communication and etiquette.",
       "image": "/images/business.jpg",
-      "pathLink": "/learning-paths/business"
+      "pathLink": "/learning-paths/business",
+      "courseIds": [121, 122, 123, 124, 125, 126, 127, 128, 129, 130]
     },
     {
       "id": 4,
       "title": "Interview Preparation",
       "description": "Prepare for interviews with tailored vocabulary, phrases, and mock sessions.",
       "image": "/images/interview.jpg",
-      "pathLink": "/learning-paths/interview"
+      "pathLink": "/learning-paths/interview",
+      "courseIds": [131, 132, 133, 134, 135, 136, 137, 138, 139, 140]
     },
     {
       "id": 5,
       "title": "Japanese for Travel",
       "description": "Learn essential phrases and cultural tips for traveling in Japan.",
       "image": "/images/travel.jpg",
-      "pathLink": "/learning-paths/travel"
+      "pathLink": "/learning-paths/travel",
+      "courseIds": [141, 142, 143, 144, 145, 146, 147, 148, 149, 150]
     }
   ]
-  }
+}

@@ -2,7 +2,7 @@ import React from "react";
 import LearningPathsList from "../components/learningPaths/LearningPathsList";
 import { useNavigate } from "react-router-dom";
 
-const CoursesPage = () => {
+const LearningPathsPage = () => {
   return (
     <div>
       <LearningPathsList />
@@ -10,4 +10,4 @@ const CoursesPage = () => {
   );
 };
 
-export default CoursesPage;
+export default LearningPathsPage;

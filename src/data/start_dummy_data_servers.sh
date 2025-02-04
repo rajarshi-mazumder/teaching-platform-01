@@ -6,6 +6,11 @@ echo "Starting json-server for Learning paths..."
 json-server --watch learning_paths.json --port 3001 &
 echo "Learning paths server started on port 3001"
 
+
+echo "Starting courses server ..."
+json-server --watch courses.json --port 4001 &
+echo "Courses server started on port 4001"
+
 echo "Starting json-server for JLPT Preparation..."
 json-server --watch jlpt_course/lessons.json --port 3002 &
 echo "JLPT Preparation server started on port 3002"

@@ -8,8 +8,11 @@ const LearningPaths = () => {
   const { learningPath, learningPathsError } = useLearningPaths();
   const navigate = useNavigate();
 
-  function handleCourseClick({ courseId }) {
-    navigate(`courses/${courseId}`);
+  function handleCourseClick({ learningPathId, learningPathObject }) {
+    // navigate(`courses/${courseId}`);
+    navigate(`/learningPaths/${learningPathId}`, {
+      state: { learningPathObject },
+    });
   }
   return (
     <div className="learning-paths-list">
@@ -18,7 +21,9 @@ const LearningPaths = () => {
           <LearningPath
             key={e.id}
             learningPath={e}
-            onClick={() => handleCourseClick({ courseId: e.id })}
+            onClick={() =>
+              handleCourseClick({ learningPathId: e.id, learningPathObject: e })
+            }
           />
         ))}
     </div>
