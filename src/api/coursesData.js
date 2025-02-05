@@ -15,9 +15,10 @@ export const fetchLearningPaths = async () => {
   return await fetchData({ port: "3001", path: "/paths" });
 };
 
-export const fetchCourseDetailsData = async ({ id }) => {
-  id = parseInt(id) + 1;
-  return await fetchData({ port: `300${id}`, path: "/lessons" });
+export const fetchCourseDetailsData = async ({ port }) => {
+  // id = parseInt(id) + 1;
+  console.log(`PORT${port}`);
+  return await fetchData({ port, path: "/lessons" });
 };
 
 export const fetchLearningPathDetailsData = async ({ courseIdList }) => {
