@@ -1,10 +1,26 @@
 import axios from "axios";
-import apiClient from "./apiClient";
+import { localApiClient, serverApiClient } from "./apiClient";
 
-const fetchData = async ({ port, path }) => {
+const dataMode = {
+  LOCAL: "local",
+  DB: "db",
+};
+
+const fetchData = async ({ port, path, dataFetchMode = dataMode.LOCAL }) => {
+  console.log(`MODE ${dataFetchMode}`);
+
   try {
-    const response = await apiClient({ port }).get(path);
-    return response.data;
+    let response = null;
+    switch (dataFetchMode) {
+      case "db":
+        response = await serverApiClient().get(path);
+        console.log(`DATA ${JSON.stringify(response.data)}`);
+        return response.data;
+      default:
+        response = await localApiClient({ port }).get(path);
+        console.log(`DATA ${JSON.stringify(response.data)}`);
+        return response.data;
+    }
   } catch (error) {
     console.error("Error fetching learning paths");
     throw error;
@@ -12,12 +28,15 @@ const fetchData = async ({ port, path }) => {
 };
 
 export const fetchLearningPaths = async () => {
-  return await fetchData({ port: "3001", path: "/paths" });
+  return await fetchData({
+    port: "3001",
+    path: "/api/learning_paths",
+    dataFetchMode: dataMode.DB,
+  });
 };
 
 export const fetchCourseDetailsData = async ({ port }) => {
   // id = parseInt(id) + 1;
-  console.log(`PORT${port}`);
   return await fetchData({ port, path: "/lessons" });
 };
 

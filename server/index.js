@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-app.use("/api/learning-paths", learningPathsRoutes);
+app.use("/api/learning_paths", learningPathsRoutes);
 app.use("/api/courses", courseRoutes);
 app.use("/api/courses/:courseId/lessons", lessonsRoutes);
 
