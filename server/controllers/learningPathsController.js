@@ -9,4 +9,19 @@ const getAllLearningPaths = async (req, res) => {
   }
 };
 
-module.exports = { getAllLearningPaths };
+const getLearningPathCoursesList = async (req, res) => {
+  const { learningPathId } = req.params;
+  try {
+    const result = await pool.query(
+      `SELECT * FROM courses WHERE id IN (SELECT course_id FROM learning_path_courses WHERE learning_path_id = $1)`,
+      [learningPathId]
+    );
+    console.log(`LP ${learningPathId}`);
+
+    res.json(result.rows);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
+module.exports = { getAllLearningPaths, getLearningPathCoursesList };

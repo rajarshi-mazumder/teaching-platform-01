@@ -11,7 +11,7 @@ const LearningPathDetailsPage = () => {
   const learningPath = state?.learningPathObject || {};
 
   const { learningPathCourses, learningPathCoursesError } =
-    useLearningPathDetails({ courseIdList: learningPath.courseIds });
+    useLearningPathDetails({ learningPathId: learningPath.id });
 
   function handleLearningPathClick({ courseId }) {
     navigate(`/courses/${courseId}`);

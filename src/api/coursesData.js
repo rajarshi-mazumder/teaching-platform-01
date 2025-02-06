@@ -7,18 +7,14 @@ const dataMode = {
 };
 
 const fetchData = async ({ port, path, dataFetchMode = dataMode.LOCAL }) => {
-  console.log(`MODE ${dataFetchMode}`);
-
   try {
     let response = null;
     switch (dataFetchMode) {
       case "db":
         response = await serverApiClient().get(path);
-        console.log(`DATA ${JSON.stringify(response.data)}`);
         return response.data;
       default:
         response = await localApiClient({ port }).get(path);
-        console.log(`DATA ${JSON.stringify(response.data)}`);
         return response.data;
     }
   } catch (error) {
@@ -40,8 +36,17 @@ export const fetchCourseDetailsData = async ({ port }) => {
   return await fetchData({ port, path: "/lessons" });
 };
 
+export const fetchLearningPathCoursesList = async ({ learningPathId }) => {
+  const coursesList = await fetchData({
+    path: `api/learning_paths/${learningPathId}`,
+    dataFetchMode: dataMode.DB,
+  });
+  return coursesList;
+};
+
 export const fetchLearningPathDetailsData = async ({ courseIdList }) => {
   const coursesList = [];
+
   for (let i = 0; i < courseIdList.length; i++) {
     const courseData = await fetchData({
       port: `4001`,
