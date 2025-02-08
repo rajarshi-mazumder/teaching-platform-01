@@ -16,7 +16,7 @@ app.use(express.json());
 
 app.use("/api/learning_paths", learningPathsRoutes);
 app.use("/api/courses", courseRoutes);
-app.use("/api/courses/:courseId/lessons", lessonsRoutes);
+app.use("/api/courses", lessonsRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);

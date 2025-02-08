@@ -15,7 +15,7 @@ const getAllCourses = async (req, res) => {
 
 const getCourseById = async (req, res) => {
   const { courseId } = req.params;
-  console.log(`COURSE ID ${courseId}`);
+
   try {
     const result = await pool.query(`SELECT * FROM courses WHERE id = $1`, [
       courseId,
