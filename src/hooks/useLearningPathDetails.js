@@ -7,14 +7,16 @@ const { useState, useEffect } = require("react");
 
 const useLearningPathDetails = ({ learningPathId }) => {
   const [learningPathCourses, setLearningPathCourses] = useState([]);
-  const [learningPathCoursesError, setleaningPathCoursesError] = useState("");
+  const [learningPathCoursesError, setleaningPathCoursesError] = useState();
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const data = await fetchLearningPathCoursesList({ learningPathId });
         setLearningPathCourses(data);
-      } catch (error) {}
+      } catch (error) {
+        setleaningPathCoursesError(error);
+      }
     };
     fetchData();
   }, []);

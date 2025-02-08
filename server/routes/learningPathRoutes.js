@@ -6,6 +6,6 @@ const {
 } = require("../controllers/learningPathsController");
 
 router.get("/", getAllLearningPaths);
-router.get("/:learningPathId", getLearningPathCoursesList);
+router.get("/:learningPathId/courses", getLearningPathCoursesList);
 
 module.exports = router;

@@ -2,6 +2,7 @@ import React from "react";
 import useLearningPathDetails from "../hooks/useLearningPathDetails";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import CourseTile from "../components/courses/CourseTile";
+import DataFetchError from "../components/errors/DataFetchError";
 
 const LearningPathDetailsPage = () => {
   const { learningPathId } = useParams();
@@ -32,6 +33,10 @@ const LearningPathDetailsPage = () => {
             ))}
           </ul>
         </div>
+      )}
+
+      {learningPathCoursesError != null && (
+        <DataFetchError message={learningPathCoursesError.message} />
       )}
     </div>
   );

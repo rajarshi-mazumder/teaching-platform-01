@@ -3,10 +3,10 @@ const router = express.Router();
 
 const {
   getAllCourses,
-  getCoursesByLearningPath,
+  getCourseById,
 } = require("../controllers/courseController");
 
 router.get("/", getAllCourses);
-router.get("/:learningPathId", getCoursesByLearningPath);
+router.get("/:courseId", getCourseById);
 
 module.exports = router;

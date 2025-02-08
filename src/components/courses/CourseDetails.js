@@ -10,16 +10,18 @@ const CourseDetails = ({ courseDetails }) => {
   };
 
   useEffect(() => {
-    if (courseDetails && courseDetails.length > 0) {
-      const initialLesson = courseDetails[0];
+    if (courseDetails?.lessons && courseDetails.lessons.length > 0) {
+      const initialLesson = courseDetails.lessons[0];
       setLessonInProgress(initialLesson);
+
+      console.log(`COURSE DETAILS ${courseDetails}`);
     }
   }, [courseDetails]);
   return (
     <div className="course-details">
       <div className="lessons-list-container">
-        {courseDetails && courseDetails.length > 0 ? (
-          courseDetails.map((lesson) => (
+        {courseDetails?.lessons && courseDetails.lessons.length > 0 ? (
+          courseDetails.lessons.map((lesson) => (
             <div key={lesson.id}>
               <LessonListItem
                 lesson={lesson}

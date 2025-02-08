@@ -4,21 +4,20 @@ import axios from "axios";
 
 const useCourseDetails = ({ id }) => {
   const [courseDetails, setCourseDetails] = useState(null);
-  const [error, setError] = useState(null);
+  const [courseDetailsError, setCourseDetailsError] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const port = getRandomInt(3001, 3005);
-        const data = await fetchCourseDetailsData({ port });
+        const data = await fetchCourseDetailsData({ courseId: id });
         setCourseDetails(data);
       } catch (error) {
-        console.log(error);
+        setCourseDetailsError(error);
       }
     };
     fetchData();
   }, []);
-  return { courseDetails, error };
+  return { courseDetails, courseDetailsError };
 };
 
 function getRandomInt(min, max) {

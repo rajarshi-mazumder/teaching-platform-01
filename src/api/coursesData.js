@@ -31,14 +31,19 @@ export const fetchLearningPaths = async () => {
   });
 };
 
-export const fetchCourseDetailsData = async ({ port }) => {
+export const fetchCourseDetailsData = async ({ courseId }) => {
   // id = parseInt(id) + 1;
-  return await fetchData({ port, path: "/lessons" });
+
+  const courseDetails = await fetchData({
+    path: `api/courses/${courseId}`,
+    dataFetchMode: dataMode.DB,
+  });
+  return courseDetails;
 };
 
 export const fetchLearningPathCoursesList = async ({ learningPathId }) => {
   const coursesList = await fetchData({
-    path: `api/learning_paths/${learningPathId}`,
+    path: `api/learning_paths/${learningPathId}/courses`,
     dataFetchMode: dataMode.DB,
   });
   return coursesList;

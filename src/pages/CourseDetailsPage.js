@@ -9,11 +9,10 @@ import CourseDetails from "../components/courses/CourseDetails";
 
 const CourseDetailsPage = () => {
   const { courseId } = useParams();
-  const { courseDetails, setCourseDetails } = useCourseDetails({
+  const { courseDetails, courseDetailsError } = useCourseDetails({
     id: courseId,
   });
 
-  console.log(courseDetails);
   return <CourseDetails courseDetails={courseDetails} />;
 };
 
