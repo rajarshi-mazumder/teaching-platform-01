@@ -28,4 +28,31 @@ const getCourseById = async (req, res) => {
   }
 };
 
-module.exports = { getAllCourses, getCourseById };
+const addCourse = async (req, res) => {
+  const { title, description, price, learningPathIds } = req.body;
+
+  if (!title || !description) {
+    return res
+      .status(400)
+      .json({ error: "Title, description and price are needed" });
+  }
+  try {
+    const result = await pool.query(
+      "INSERT INTO courses (title, description, price) VALUES ($1, $2, $3) RETURNING *",
+      [title, description, price || 0]
+    );
+    const course = result.rows[0];
+    for (let pathId of learningPathIds) {
+      await pool.query(
+        "INSERT INTO learning_path_courses (learning_path_id, course_id) VALUES ($1, $2)",
+        [pathId, course.id]
+      );
+    }
+
+    return res.status(201).json(course);
+  } catch (error) {
+    console.log(`Error entering course ${error}`);
+  }
+};
+
+module.exports = { getAllCourses, getCourseById, addCourse };

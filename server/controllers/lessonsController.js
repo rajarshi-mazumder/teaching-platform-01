@@ -3,7 +3,6 @@ const router = express.Router();
 const pool = require("../config/db");
 
 const getAllLessonsFromCourse = async (req, res) => {
-  console.log("SKILLET");
   try {
     const { courseId } = req.params;
 
