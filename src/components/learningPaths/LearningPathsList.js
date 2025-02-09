@@ -10,7 +10,7 @@ const LearningPaths = () => {
 
   function handleCourseClick({ learningPathId, learningPathObject }) {
     // navigate(`courses/${courseId}`);
-    navigate(`/learningPaths/${learningPathId}`, {
+    navigate(`/learning_paths/${learningPathId}`, {
       state: { learningPathObject },
     });
   }

@@ -11,15 +11,17 @@ import HomeLayout from "./layouts/HomeLayout";
 import LearningPathsPage from "./pages/LearningPathsPage";
 import LearningPathDetailsPage from "./pages/LearningPathDetailsPage";
 import CourseDetailsPage from "./pages/CourseDetailsPage";
+import AddLearningPathPage from "./pages/AddLearningPathPage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<HomeLayout />}>
       <Route index={true} element={<LearningPathsPage />} />
       <Route
-        path="/learningPaths/:learningPathId"
+        path="/learning_paths/:learningPathId"
         element={<LearningPathDetailsPage />}
       />
+      <Route path="/add_learning_path" element={<AddLearningPathPage />} />
       <Route path="/courses/:courseId" element={<CourseDetailsPage />} />
     </Route>
   )

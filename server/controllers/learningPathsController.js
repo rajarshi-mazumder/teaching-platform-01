@@ -23,6 +23,7 @@ const getLearningPathCoursesList = async (req, res) => {
 };
 
 const addLearningPath = async (req, res) => {
+  console.log(`HERE ${JSON.stringify(req.body)}`);
   const { title, description, image } = req.body;
 
   if (!title || !description) {

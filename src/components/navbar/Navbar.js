@@ -12,8 +12,8 @@ const Navbar = () => {
         <a href="/" className="navbar-link">
           Home
         </a>
-        <a href="/courses" className="navbar-link">
-          Courses
+        <a href="/add_learning_path" className="navbar-link">
+          Add Learnng Path
         </a>
         <a href="/about" className="navbar-link">
           About Us
