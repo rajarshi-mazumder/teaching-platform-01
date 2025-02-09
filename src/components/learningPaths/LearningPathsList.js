@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from "react";
-import useLearningPaths from "../../hooks/uselearningPaths";
 import LearningPath from "./LearningPathTile";
 import { useNavigate } from "react-router-dom";
+import { useLearningPathsContext } from "../../contexts/LearningPathsProvider";
 
 const LearningPaths = () => {
-  const { learningPath, learningPathsError } = useLearningPaths();
+  const { learningPaths, learningPathsError } = useLearningPathsContext();
   const navigate = useNavigate();
 
   function handleCourseClick({ learningPathId, learningPathObject }) {
-    // navigate(`courses/${courseId}`);
     navigate(`/learning_paths/${learningPathId}`, {
       state: { learningPathObject },
     });
@@ -16,8 +15,8 @@ const LearningPaths = () => {
   return (
     <div className="learning-paths-list">
       {!learningPathsError &&
-        learningPath.length > 0 &&
-        learningPath.map((e) => (
+        learningPaths.length > 0 &&
+        learningPaths.map((e) => (
           <LearningPath
             key={e.id}
             learningPath={e}

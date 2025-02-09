@@ -1,5 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { addCourse } from "../../api/coursesDataMaster";
+import { useLearningPathsContext } from "../../contexts/LearningPathsProvider";
+import Dropdown from "react-bootstrap/Dropdown";
+import DropdownButton from "react-bootstrap/DropdownButton";
+import ButtonGroup from "react-bootstrap/ButtonGroup";
 
 const AddCoursePage = () => {
   const [title, setTitle] = useState("");
@@ -7,6 +11,7 @@ const AddCoursePage = () => {
   const [price, setPrice] = useState(0);
   const [image, setImage] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [courselearningPath, setCourseLearningPath] = useState("");
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
@@ -20,6 +25,7 @@ const AddCoursePage = () => {
     const formData = new FormData();
     formData.append("title", title);
     formData.append("description", description);
+    formData.append("learningPathIds", [courselearningPath]);
     formData.append("price", price);
     if (image) {
       formData.append("image", image); // Attach the selected image
@@ -38,8 +44,17 @@ const AddCoursePage = () => {
     }
   };
 
+  const handleLearningPathSelect = async ({ path }) => {
+    setCourseLearningPath(path.id);
+  };
+
+  const { learningPaths, setLearningPaths } = useLearningPathsContext();
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedValue, setSelectedValue] = useState(null);
+
   return (
     <div className="form-container">
+      {JSON.stringify(learningPaths)}
       <h2 className="form-title">Add a New Course</h2>
       <form
         className="form"
@@ -74,6 +89,27 @@ const AddCoursePage = () => {
           accept="image/*"
           onChange={handleFileChange}
         />
+
+        <DropdownButton
+          as={ButtonGroup}
+          title="Select Learning Path"
+          onClick={() => {
+            setIsOpen(!isOpen);
+          }}
+        >
+          {learningPaths.map((path) => (
+            <Dropdown.Item
+              key={path.id}
+              className="dropdown-item"
+              onClick={() => {
+                handleLearningPathSelect({ path });
+              }}
+            >
+              {path.title}
+            </Dropdown.Item>
+          ))}
+        </DropdownButton>
+
         <button className="form-button" type="submit" disabled={loading}>
           {loading ? "Loading.." : "Add learning path"}
         </button>

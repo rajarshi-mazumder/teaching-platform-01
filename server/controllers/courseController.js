@@ -43,12 +43,13 @@ const addCourse = async (req, res) => {
       [title, description, price || 0]
     );
     const course = result.rows[0];
-    for (let pathId of learningPathIds) {
-      await pool.query(
-        "INSERT INTO learning_path_courses (learning_path_id, course_id) VALUES ($1, $2)",
-        [pathId, course.id]
-      );
-    }
+    if (learningPathIds && learningPathIds.length > 0)
+      for (let pathId of learningPathIds) {
+        await pool.query(
+          "INSERT INTO learning_path_courses (learning_path_id, course_id) VALUES ($1, $2)",
+          [pathId, course.id]
+        );
+      }
 
     return res.status(201).json(course);
   } catch (error) {

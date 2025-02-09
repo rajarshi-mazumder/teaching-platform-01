@@ -13,6 +13,7 @@ import LearningPathDetailsPage from "./pages/LearningPathDetailsPage";
 import CourseDetailsPage from "./pages/CourseDetailsPage";
 import AddLearningPathPage from "./components/forms/AddLearningPathPage";
 import AddCoursePage from "./components/forms/AddCoursePage";
+import { LearningPathsProvider } from "./contexts/LearningPathsProvider";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -30,7 +31,11 @@ const router = createBrowserRouter(
 );
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <LearningPathsProvider>
+      <RouterProvider router={router} />
+    </LearningPathsProvider>
+  );
 }
 
 export default App;
