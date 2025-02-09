@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-// import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { addLearningPathData } from "../api/setData";
+import { addLearningPathData } from "../api/learningPathsDataMaster";
 
 const AddLearningPathPage = () => {
   const [title, setTitle] = useState("");

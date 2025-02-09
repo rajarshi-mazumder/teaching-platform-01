@@ -1,7 +1,4 @@
-import {
-  fetchLearningPathCoursesList,
-  fetchLearningPathDetailsData,
-} from "../api/coursesData";
+import { fetchLearningPathCoursesList } from "../api/learningPathsDataMaster";
 
 const { useState, useEffect } = require("react");
 
@@ -21,15 +18,6 @@ const useLearningPathDetails = ({ learningPathId }) => {
     fetchData();
   }, []);
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const data = await fetchLearningPathDetailsData({ courseIdList });
-  //       setLearningPathCourses(data);
-  //     } catch (error) {}
-  //   };
-  //   fetchData();
-  // }, [courses]);
   return { learningPathCourses, learningPathCoursesError };
 };
 

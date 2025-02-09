@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { fetchCourseDetailsData } from "../api/coursesData";
 import axios from "axios";
+import { fetchCourseDetailsData } from "../api/coursesDataMaster";
 
 const useCourseDetails = ({ id }) => {
   const [courseDetails, setCourseDetails] = useState(null);

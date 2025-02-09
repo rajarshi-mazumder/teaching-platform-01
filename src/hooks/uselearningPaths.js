@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { fetchLearningPaths } from "../api/coursesData";
+import { fetchLearningPaths } from "../api/learningPathsDataMaster";
 
 const useLearningPaths = () => {
   const [learningPath, setLearningPaths] = useState([]);

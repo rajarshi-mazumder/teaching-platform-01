@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { fetchLearningPaths } from "../../api/coursesData";
 import useLearningPaths from "../../hooks/uselearningPaths";
 import LearningPath from "./LearningPathTile";
 import { useNavigate } from "react-router-dom";
@@ -17,6 +16,7 @@ const LearningPaths = () => {
   return (
     <div className="learning-paths-list">
       {!learningPathsError &&
+        learningPath.length > 0 &&
         learningPath.map((e) => (
           <LearningPath
             key={e.id}
