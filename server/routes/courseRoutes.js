@@ -6,9 +6,10 @@ const {
   getCourseById,
   addCourse,
 } = require("../controllers/courseController");
+const { upload } = require("../controllers/fileUpload");
 
 router.get("/", getAllCourses);
 router.get("/:courseId", getCourseById);
-router.post("/add_course", addCourse);
+router.post("/add_course", upload.single("image"), addCourse);
 
 module.exports = router;

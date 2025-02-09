@@ -1,49 +1,106 @@
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    background-color: #1a202c;
-    color: white;
-  }
-  
-  .navbar-logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-  
-  .navbar-links {
-    display: flex;
-    gap: 1.5rem;
-  }
-  
-  .navbar-link {
-    text-decoration: none;
-    color: white;
-    font-size: 1rem;
-    transition: color 0.3s;
-  }
-  
-  .navbar-link:hover {
-    color: #63b3ed;
-  }
-  
-  .navbar-buttons {
-    display: flex;
-    gap: 1rem;
-  }
-  
-  .navbar-button {
-    padding: 0.5rem 1rem;
-    background-color: #3182ce;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .navbar-button:hover {
-    background-color: #63b3ed;
-  }
-  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #1a202c;
+  color: white;
+}
+
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.navbar-link {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  transition: color 0.3s;
+  cursor: pointer;
+}
+
+.navbar-link:hover {
+  color: #63b3ed;
+}
+
+/* Dropdown Menu */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-button {
+  border: none;
+  background-color: transparent;
+  /* color: white; */
+  font-size: 1rem;
+  cursor: pointer;
+  transition: color 0.3s;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-button:hover {
+  /* color: #63b3ed; */
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  /* background-color: white; */
+  color: black;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 150px;
+  z-index: 1000;
+}
+
+.dropdown-menu li {
+  padding: 0.5rem 1rem;
+  background-color: #63b3ed;
+
+  transition: background-color 0.3s;
+}
+
+.dropdown-item {
+  text-decoration: none;
+  color: black;
+  display: block;
+  width: 100%;
+}
+
+/* .dropdown-menu li:hover {
+  background-color: #63b3ed;
+  color: white;
+} */
+
+/* Sign-In/Sign-Up Buttons */
+.navbar-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar-button {
+  padding: 0.5rem 1rem;
+  /* background-color: #3182ce; */
+  /* color: white; */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.navbar-button:hover {
+  /* background-color: #63b3ed; */
+}

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { addLearningPathData } from "../api/learningPathsDataMaster";
-import "../components/forms/FormStyles.css";
+import { addLearningPathData } from "../../api/learningPathsDataMaster";
+import "./FormStyles.css";
 
 const AddLearningPathPage = () => {
   const [title, setTitle] = useState("");
