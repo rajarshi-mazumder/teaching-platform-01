@@ -15,10 +15,16 @@ export const fetchLearningPathCoursesList = async ({ learningPathId }) => {
 };
 
 // Setter Methods-------
-export const addLearningPathData = async ({ newlearningPath }) => {
+export const addLearningPathData = async (formData) => {
+  for (let [key, value] of formData.entries()) {
+    console.log(`${key}:`, value);
+  }
   const response = await serverApiClient().post(
     "/api/learning_paths/add_learning_path",
-    newlearningPath
+    formData,
+    {
+      headers: { "Content-Type": "multipart/form-data" },
+    }
   );
   return response.data;
 };

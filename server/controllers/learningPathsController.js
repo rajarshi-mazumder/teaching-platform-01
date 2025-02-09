@@ -23,9 +23,11 @@ const getLearningPathCoursesList = async (req, res) => {
 };
 
 const addLearningPath = async (req, res) => {
-  console.log(`HERE ${JSON.stringify(req.body)}`);
-  const { title, description, image } = req.body;
+  console.log("Received body:", req.body);
+  console.log("Received file:", req.file); // ✅ Debug: Check received file
 
+  const { title, description } = req.body;
+  const imagePath = req.file ? `uploads/${req.file.filename}` : null;
   if (!title || !description) {
     return res
       .status(400)
@@ -34,7 +36,7 @@ const addLearningPath = async (req, res) => {
   try {
     const result = await pool.query(
       "INSERT INTO learning_paths (title, description, image) VALUES ($1, $2, $3) RETURNING *",
-      [title, description, image || null]
+      [title, description, imagePath || null]
     );
     return res.status(201).json(result.rows[0]);
   } catch (error) {
