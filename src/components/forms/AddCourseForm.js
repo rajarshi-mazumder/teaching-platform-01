@@ -1,61 +1,12 @@
-import React, { useEffect, useState } from "react";
-import { addCourse } from "../../api/coursesDataMaster";
-import { useLearningPathsContext } from "../../contexts/LearningPathsProvider";
-import Dropdown from "react-bootstrap/Dropdown";
-import DropdownButton from "react-bootstrap/DropdownButton";
-import ButtonGroup from "react-bootstrap/ButtonGroup";
+import React from "react";
 
-const AddCoursePage = () => {
+const AddCourseForm = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState(0);
   const [image, setImage] = useState(null);
   const [loading, setLoading] = useState(false);
   const [courselearningPaths, setCourseLearningPath] = useState([]);
-
-  const handleFileChange = (e) => {
-    const file = e.target.files[0];
-    setImage(file);
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    setLoading(true);
-    const formData = new FormData();
-    formData.append("title", title);
-    formData.append("description", description);
-    courselearningPaths.forEach((id) =>
-      formData.append("learningPathIds[]", id)
-    );
-
-    // formData.append("learningPathIds", courselearningPaths);
-    formData.append("price", price);
-    if (image) {
-      formData.append("image", image); // Attach the selected image
-    }
-
-    try {
-      await addCourse(formData);
-      setTitle("");
-      setDescription("");
-      setPrice(0);
-      setImage(null);
-    } catch (error) {
-      console.error("Upload failed", error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const handleLearningPathSelect = async ({ path }) => {
-    setCourseLearningPath([...courselearningPaths, path.id]);
-  };
-
-  const { learningPaths, setLearningPaths } = useLearningPathsContext();
-  const [isOpen, setIsOpen] = useState(false);
-  const [selectedValue, setSelectedValue] = useState(null);
-
   return (
     <div className="form-container">
       <h2 className="form-title">Add a New Course</h2>
@@ -123,4 +74,4 @@ const AddCoursePage = () => {
   );
 };
 
-export default AddCoursePage;
+export default AddCourseForm;
