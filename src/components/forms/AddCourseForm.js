@@ -1,18 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
+import Dropdown from "react-bootstrap/Dropdown";
+import DropdownButton from "react-bootstrap/DropdownButton";
+import ButtonGroup from "react-bootstrap/ButtonGroup";
+import "./FormStyles.css";
 
-const AddCourseForm = () => {
+const AddCourseForm = ({
+  learningPaths,
+  handleFileChange,
+  handleLearningPathSelect,
+  loading,
+  handleSubmit,
+}) => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState(0);
-  const [image, setImage] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [courselearningPaths, setCourseLearningPath] = useState([]);
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <div className="form-container">
       <h2 className="form-title">Add a New Course</h2>
       <form
         className="form"
-        onSubmit={handleSubmit}
+        onSubmit={async (e) => {
+          e.preventDefault();
+          await handleSubmit({ title, description, price });
+          setTitle("");
+          setDescription("");
+          setPrice(0);
+        }}
         encType="multipart/form-data"
       >
         <input
@@ -46,6 +61,7 @@ const AddCourseForm = () => {
 
         <DropdownButton
           as={ButtonGroup}
+          className="form-dropdown"
           title="Select Learning Path"
           onClick={() => {
             setIsOpen(!isOpen);

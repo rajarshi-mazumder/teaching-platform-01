@@ -71,3 +71,6 @@
     cursor: not-allowed;
   }
   
+  .form-dropdown .dropdown-item{
+    background-color: #c7c7c7;
+  }

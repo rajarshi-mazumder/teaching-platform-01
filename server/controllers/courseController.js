@@ -30,8 +30,9 @@ const getCourseById = async (req, res) => {
 
 const addCourse = async (req, res) => {
   const { title, description, price, learningPathIds } = req.body;
-  console.log(`leaningPathIds ${learningPathIds} ${JSON.stringify(req.body)}`);
+
   const imagePath = req.file ? `uploads/${req.file.filename}` : null;
+
   if (!title || !description) {
     return res
       .status(400)

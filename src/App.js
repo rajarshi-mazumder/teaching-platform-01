@@ -12,7 +12,7 @@ import LearningPathsPage from "./pages/LearningPathsPage";
 import LearningPathDetailsPage from "./pages/LearningPathDetailsPage";
 import CourseDetailsPage from "./pages/CourseDetailsPage";
 import AddLearningPathPage from "./components/forms/AddLearningPathPage";
-import AddCoursePage from "./components/forms/AddCoursePage";
+import AddCoursePage from "./pages/AddCoursePage";
 import { LearningPathsProvider } from "./contexts/LearningPathsProvider";
 
 const router = createBrowserRouter(
